@@ -10,8 +10,8 @@ export function createFarmUI(config, onStart, onStop) {
   shadowHost.id = 'wplace-farm-ui';
   shadowHost.style.cssText = `
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 70px;
     z-index: 2147483647;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   `;

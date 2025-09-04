@@ -53,7 +53,7 @@ function handleWindowsVisibilityOnModal() {
         hiddenWindowsByModal.add(windowElement);
         windowElement.style.transition = 'all 0.3s ease-out';
         windowElement.style.opacity = '0';
-        windowElement.style.transform = 'scale(0.8)';
+        //windowElement.style.transform = 'scale(0.8)';
         windowElement.style.pointerEvents = 'none';
 
         // También ocultar el host si está en Shadow DOM
@@ -62,7 +62,7 @@ function handleWindowsVisibilityOnModal() {
           debugLog('Also hiding Shadow DOM host', root.host);
           root.host.style.transition = 'all 0.3s ease-out';
           root.host.style.opacity = '0';
-          root.host.style.transform = 'scale(0.8)';
+          //root.host.style.transform = 'scale(0.8)';
           root.host.style.pointerEvents = 'none';
         }
       }
@@ -73,7 +73,7 @@ function handleWindowsVisibilityOnModal() {
         hiddenWindowsByModal.delete(windowElement);
         windowElement.style.transition = 'all 0.3s ease-in';
         windowElement.style.opacity = '1';
-        windowElement.style.transform = 'scale(1)';
+        //windowElement.style.transform = 'scale(1)';
         windowElement.style.pointerEvents = 'auto';
 
         // También mostrar el host si está en Shadow DOM
@@ -82,7 +82,7 @@ function handleWindowsVisibilityOnModal() {
           debugLog('Also showing Shadow DOM host', root.host);
           root.host.style.transition = 'all 0.3s ease-in';
           root.host.style.opacity = '1';
-          root.host.style.transform = 'scale(1)';
+          //root.host.style.transform = 'scale(1)';
           root.host.style.pointerEvents = 'auto';
         }
       }
