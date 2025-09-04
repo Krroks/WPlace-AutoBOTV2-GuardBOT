@@ -8,6 +8,7 @@ Thumbs.db
 
 # Dependencias
 node_modules/
+/node_modules/
 
 # Logs
 *.log
