@@ -71,9 +71,6 @@ export async function runGuard() {
     
     // Configurar event listeners
     setupEventListeners();
-
-    // Configurar observer de modales
-    setupModalHandler();
     
     // Iniciar sesión de métricas (no bloqueante)
     (async () => {
@@ -336,41 +333,6 @@ function setupEventListeners() {
       }
     }
   });
-}
-
-function setupModalHandler() {
-  const guardContainer = guardState.ui.container;
-
-  function checkModalsAndToggle() {
-    const modals = document.querySelectorAll('dialog[open], .modal.show, .modal[open]');
-
-    if (modals.length > 0) {
-      // Ocultar Guard
-      guardContainer.style.opacity = '0';
-      guardContainer.style.transform = 'scale(0.8)';
-      guardContainer.style.pointerEvents = 'none';
-    } else {
-      // Mostrar Guard
-      guardContainer.style.opacity = '1';
-      guardContainer.style.transform = 'scale(1)';
-      guardContainer.style.pointerEvents = 'auto';
-    }
-  }
-
-  // Observer para cambios de atributos (modal open/close)
-  const observer = new MutationObserver(checkModalsAndToggle);
-  observer.observe(document.body, {
-    attributes: true,
-    subtree: true,
-    attributeFilter: ['open', 'class'],
-    childList: true
-  });
-
-  // Transiciones suaves
-  guardContainer.style.transition = 'all 0.3s ease';
-
-  // Verificación inicial
-  checkModalsAndToggle();
 }
 
 async function initializeGuard(isAutoInit = false) {
